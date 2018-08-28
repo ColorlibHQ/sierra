@@ -1,0 +1,91 @@
+/**
+	%1$s - epsilon_general_separator -
+	%2$s - epsilon_accent_color - #0385d0
+	%3$s - epsilon_accent_color_second - #a1083a
+	%4$s - epsilon_text_separator -
+	%5$s - epsilon_title_color - #1a171c
+	%6$s - epsilon_subtitle_color - #1a171c
+	%7$s - epsilon_text_color - #777777
+	%8$s - epsilon_link_color - #0385d0
+	%9$s - epsilon_link_hover_color - #a1083a
+	%10$s - epsilon_link_active_color - #333333
+	%10$s - epsilon_menu_separator -
+	%11$s - epsilon_header_background - #151c1f
+	%12$s - epsilon_dropdown_menu_background - #a1083a
+	%13$s - epsilon_dropdown_menu_hover_background - #940534
+	%14$s - epsilon_menu_item_color - #ebebeb
+	%15$s - epsilon_menu_item_hover_color - #ffffff
+	%16$s - epsilon_menu_item_active_color - #0385d0
+	%17$s - epsilon_footer_separator -
+	%18$s - epsilon_footer_contact_background - #0377bb
+	%19$s - epsilon_footer_background - #192229
+	%20$s - epsilon_footer_title_color - #ffffff
+	%21$s - epsilon_footer_text_color - #a9afb1
+	%22$s - epsilon_footer_link_color - #a9afb1
+	%23$s - epsilon_footer_link_hover_color - #ffffff
+	%24$s - epsilon_footer_link_active_color - #a9afb1
+ */
+
+ /* ==========================================================================
+   =Accent colors
+   ========================================================================== */
+
+body{
+
+}
+h1, h2, h3, h4, h5, h6,
+.c_title h2,
+.slider_text_box p,
+.feature_item h4,
+.l_title h2,
+.l_title h2,
+.banner_inner_text h2{
+	color: %5$s;
+}
+.c_title h6,
+.l_title h6,
+.banner_inner_text p{
+	color: %6$s;
+}
+p,
+.feature_item p,
+.text_3d p,
+.team_people_text p,
+.touch_details p,
+.challange_text_inner p,
+.testimonials_slider .owl-item.center p,
+.left_company_text p,
+.blog_text p,
+.s_solution_item p{
+	color: %7$s;
+}
+.more_btn{
+	color: %8$s;
+}
+.more_btn:hover{
+	color: %9$s;
+}
+.main_menu_area .navbar .navbar-nav li.submenu .dropdown-menu{
+	background: %13$s;
+}
+.main_menu_area .navbar .navbar-nav li a{
+	color: %15$s;
+}
+.main_menu_area .navbar .navbar-nav li:hover a{
+	color: %16$s;
+}
+.main_menu_area .navbar .navbar-nav li.active a{
+	color: %17$s;
+}
+.footer_copyright{
+	background: %20$s;
+}
+.footer_copyright .float-sm-left h5{
+	color: %22$s;
+}
+.footer_copyright .float-sm-left h5 a{
+	color: %23$s;
+}
+.footer_copyright .float-sm-left h5 a:hover{
+	color: %24$s;
+}

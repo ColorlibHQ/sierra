@@ -1,0 +1,446 @@
+{
+   "standard":{
+      "label":"Standard",
+      "thumb": "/inc/customizer/demo/sierra-preivew.png",
+      "tag":[
+         "business"
+      ],
+      "posts":{
+         "label":"Posts",
+         "content":{
+            "importer":{
+               "class":"Epsilon_Post_Generator",
+               "method":"add_posts"
+            },
+            "post_count":15,
+            "image_size":[
+               825,
+               245
+            ],
+            "image_category":[
+               "business"
+            ]
+         }
+      },
+      "options":{
+         "label":"General Options",
+         "content":{
+            "sierra_google_api_key":{
+               "id":"sierra_google_api_key",
+               "label":"sierra_google_api_key",
+               "setting":"sierra_google_api_key",
+               "content":"AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"
+            },
+            "logo":{
+               "id":"logo",
+               "label":"Logo",
+               "setting":"custom_logo",
+               "content":"\/assets\/img\/logo.png"
+            },
+            "frontpage":{
+               "id":"frontpage",
+               "label":"Set frontpage to static",
+               "setting":"default",
+               "content":"default"
+            },
+            "blogpage":{
+               "id":"blogpage",
+               "label":"Set blog page",
+               "setting":"default",
+               "content":"default"
+            }
+         }
+      },
+      "widgets":{
+         "label":"Widgets",
+         "content":{
+            "sidebar-1":{
+               "search-2":{
+                  "title":""
+               },
+               "recent-posts-2":{
+                  "title":"",
+                  "number":5
+               },
+               "recent-comments-2":{
+                  "title":"",
+                  "number":5
+               },
+               "archives-2":{
+                  "title":"",
+                  "count":0,
+                  "dropdown":0
+               },
+               "categories-2":{
+                  "title":"",
+                  "count":0,
+                  "hierarchical":0,
+                  "dropdown":0
+               },
+               "meta-2":{
+                  "title":""
+               }
+            },
+            "footer-sidebar-1":{
+             "sierra_instagram_photo":{
+                "mc4wp_form_widget":{
+                   "title":""
+                }
+             }
+            },
+            "footer-sidebar-2":{
+               "sierra_instagram_photo":{
+                  "title":"Instagram",
+                  "insta_user": "remonfoysal",
+                  "insta_items": "8"
+               }
+            },
+            "footer-sidebar-3":{
+               "mc4wp_form_widget":{
+                  "title":""
+               }
+            }
+         }
+      },
+      "plugins":{
+         "label":"Plugins",
+         "content":{
+            "contact-form-7":"Contact Form 7",
+            "mailchimp-for-wp": "MailChimp for WordPress"
+         }
+      },
+      "menus":{
+         "label":"Menus",
+         "content":{
+            "primary":{
+               "id":"primary",
+               "label":"Main Menu",
+               "menu":[
+                  {
+                     "href": "#",
+                     "label": "About Us"
+                  },
+                  {
+                     "href":"#",
+                     "label":"Services"
+                  },
+                  {
+                     "href": "#",
+                     "label": "Portfolio"
+                  },
+                  {
+                     "href":"#",
+                     "label":"Contact"
+                  }
+               ]
+            }
+         }
+      },
+      "sections":{
+         "id":"sections",
+         "label":"Sections",
+         "content":{
+            "slider9939":{
+               "id":"slider9939",
+               "label":"Slider",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "slider_section_image": "\/assets\/img\/home-slider\/slider-bg-1.png",
+                  "slider_navigation": "",
+                  "slider_grouping": [
+                     "all"
+                  ],
+                  "slider_repeater_field": "sierra_slides",
+                  "slider_section_unique_id": "",
+                  "slider_section_class": "section-slider-630859220",
+                  "index": 0,
+                  "type": "slider"
+               }
+            },
+            "feature45855":{
+               "id":"feature45855",
+               "label":"Feature",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "feature_section_image": "\/assets\/img\/icon\/title-icon.png",
+                  "feature_section_title": "We are young but bold",
+                  "feature_section_subtitle": "Discover the features",
+                  "feature_grouping": [
+                     "all"
+                  ],
+                  "feature_navigation": "",
+                  "feature_repeater_field": "sierra_feature",
+                  "feature_section_unique_id": "",
+                  "feature_section_class": "section-feature-1153373562",
+                  "feature_background_color": "",
+                  "feature_background_color_opacity": 1,
+                  "feature_background_image": "",
+                  "feature_background_position": "center",
+                  "feature_background_size": "initial",
+                  "feature_background_repeat": "repeat",
+                  "feature_background_parallax": "",
+                  "feature_background_video": "",
+                  "feature_column_stretch": "boxedin",
+                  "feature_row_spacing_top": "none",
+                  "feature_row_spacing_bottom": "none",
+                  "feature_column_group": 3,
+                  "feature_column_alignment": "center",
+                  "index": 1,
+                  "type": "feature"
+               }
+            },
+            "testimonials38659":{
+               "id":"testimonials38659",
+               "label":"Testimonials",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "testimonial_section_image": "\/assets\/img\/icon\/title-icon.png",
+                  "testimonials_section_title": "We don’t hide, we stand tall in front of chalenge",
+                  "testimonials_section_subtitle": "Discover the features",
+                  "testimonials_section_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices.",
+                  "testimonial_section_image_right": "\/sierra\/assets\/img\/iphone4.png",
+                  "testimonials_grouping": "",
+                  "testimonials_navigation": "",
+                  "testimonials_repeater_field": "sierra_testimonials",
+                  "testimonials_section_unique_id": "",
+                  "testimonials_section_class": "section-testimonials-1223767597",
+                  "testimonials_background_color": "",
+                  "testimonials_background_color_opacity": 1,
+                  "testimonials_background_image": "",
+                  "testimonials_background_position": "center",
+                  "testimonials_background_size": "initial",
+                  "testimonials_background_repeat": "repeat",
+                  "testimonials_background_parallax": "",
+                  "testimonials_background_video": "",
+                  "testimonials_row_title_align": "left",
+                  "testimonials_column_stretch": "boxedin",
+                  "testimonials_row_spacing_top": "md",
+                  "testimonials_row_spacing_bottom": "md",
+                  "index": 2,
+                  "type": "testimonials"
+               }
+            },
+            "build26650":{
+               "id":"build26650",
+               "label":"Build",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "build_section_image": "\/assets\/img\/icon\/title-icon.png",
+                  "build_section_title": "We build a strong team of great people",
+                  "build_section_subtitle": "Discover the features",
+                  "build_section_text": "Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra.",
+                  "build_grouping": [
+                     "all"
+                  ],
+                  "build_navigation": "",
+                  "build_repeater_field": "sierra_build",
+                  "build_section_unique_id": "",
+                  "build_section_class": "section-build-657747483",
+                  "build_background_color": "",
+                  "build_background_color_opacity": 1,
+                  "build_background_image": "",
+                  "build_background_position": "center",
+                  "build_background_size": "initial",
+                  "build_background_repeat": "repeat",
+                  "build_background_parallax": "",
+                  "build_background_video": "",
+                  "build_row_title_align": "right",
+                  "build_column_stretch": "boxedin",
+                  "build_row_spacing_top": "lg",
+                  "build_row_spacing_bottom": "lg",
+                  "build_column_vertical_alignment": "middle",
+                  "index": 3,
+                  "type": "build"
+               }
+            },
+            "contact68986":{
+               "id":"contact68986",
+               "label":"Contact",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "contact_shortcode": "",
+                  "contact_section_image": "\/assets\/img\/icon\/title-icon.png",
+                  "contact_section_title": "We build a strong team of great people",
+                  "contact_section_subtitle": "Discover the features",
+                  "contact_section_text": "Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra.",
+                  "contact_phone_number": "+452373 95593 232",
+                  "contact_section_unique_id": "",
+                  "contact_section_class": "section-contact-1747593732",
+                  "contact_background_color": "",
+                  "contact_background_color_opacity": 1,
+                  "contact_background_image": "",
+                  "contact_background_position": "center",
+                  "contact_background_size": "initial",
+                  "contact_background_repeat": "repeat",
+                  "contact_background_parallax": "",
+                  "contact_background_video": "",
+                  "contact_row_title_align": "left",
+                  "contact_column_stretch": "boxedin",
+                  "contact_row_spacing_top": "none",
+                  "contact_row_spacing_bottom": "none",
+                  "index": 4,
+                  "type": "contact"
+               }
+            },
+            "contact_info68986":{
+               "id":"contact_info68986",
+               "label":"Contact Info",
+               "setting":"sierra_frontpage_sections",
+               "content":{
+                  "contact_info_map_image": "\/assets\/img\/world-map.png",
+                  "contact_info_title": "Gibraltar Office",
+                  "contact_info_address": "Casemates Square, no253 United kingdom",
+                  "contact_info_phone": "+453678 9283 559",
+                  "contact_info_email": "contact@template.com",
+                  "contact_info_section_unique_id": "",
+                  "contact_info_section_class": "section-contact_info-746826431",
+                  "contact_info_background_color": "",
+                  "contact_info_background_color_opacity": 1,
+                  "contact_info_background_image": "",
+                  "contact_info_background_position": "center",
+                  "contact_info_background_size": "initial",
+                  "contact_info_background_repeat": "repeat",
+                  "contact_info_background_parallax": "",
+                  "contact_info_background_video": "",
+                  "contact_info_column_stretch": "boxedin",
+                  "contact_info_row_spacing_top": "lg",
+                  "contact_info_row_spacing_bottom": "lg",
+                  "index": 5,
+                  "type": "contact_info"
+               }
+            }
+         }
+      },
+      "content":{
+         "id":"content",
+         "label":"Content",
+         "content":{
+            "slider":{
+               "id":"slider",
+               "setting":"sierra_slides",
+               "label":"TODO MAKE SURE ITS CORRECT  slides",
+               "content":{
+                  "0": {
+                     "slides_title": "Growing your business",
+                     "slides_description": "Choose a powerful design for your Start-up",
+                     "slides_btn_text": "Discover",
+                     "slides_btn_url": "#",
+                     "slides_image": "\/assets\/img\/home-slider\/slider-m-1.png",
+                     "index": 0
+                  },
+                  "1": {
+                     "slides_title": "Growing your business",
+                     "slides_description": "Choose a powerful design for your Start-up",
+                     "slides_btn_text": "Discover",
+                     "slides_btn_url": "#",
+                     "slides_image": "\/assets\/img/home-slider\/slider-m-1.png",
+                     "index": 1
+                  },
+                  "2": {
+                     "slides_title": "Growing your business",
+                     "slides_description": "Choose a powerful design for your Start-up",
+                     "slides_btn_text": "Discover",
+                     "slides_btn_url": "#",
+                     "slides_image": "\/assets\/img\/home-slider\/slider-m-1.png",
+                     "index": 2
+                  }
+               }
+            },
+            "feature":{
+               "id":"feature",
+               "setting":"sierra_feature",
+               "label":"TODO MAKE SURE ITS CORRECT  feature",
+               "content":{
+                  "0": {
+                     "feature_image": "\/assets\/img\/icon\/title-icon.png",
+                     "feature_title": "Brand Identity",
+                     "feature_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.",
+                     "feature_url": "#",
+                     "index": 0
+                  },
+                  "1": {
+                     "feature_image": "\/assets\/img\/icon\/title-icon.png",
+                     "feature_title": "Online Marketing",
+                     "feature_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.",
+                     "feature_url": "#",
+                     "index": 1
+                  },
+                  "2": {
+                     "feature_image": "\/assets\/img\/icon\/title-icon.png",
+                     "feature_title": "Social Media",
+                     "feature_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.",
+                     "feature_url": "#",
+                     "index": 2
+                  }
+               }
+            },
+            "testimonials":{
+               "id":"testimonials",
+               "setting":"sierra_testimonials",
+               "label":"TODO MAKE SURE ITS CORRECT  testimonials",
+               "content":{
+                  "0": {
+                     "testimonial_title": "Simply professionals",
+                     "testimonial_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.",
+                     "testimonial_name": "Chriss Turner",
+                     "testimonial_deg": "CEO Enterprise",
+                     "testimonial_image": "\/assets\/img\/team\/people\/people-5.jpg",
+                     "index": 0
+                  },
+                  "1": {
+                     "testimonial_title": "They are the best",
+                     "testimonial_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.",
+                     "testimonial_name": "Chriss Turner",
+                     "testimonial_deg": "CEO Enterprise",
+                     "testimonial_image": "\/assets\/img\/team\/people\/people-5.jpg",
+                     "index": 0
+                  },
+                  "2": {
+                     "testimonial_title": "We just love them",
+                     "testimonial_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.",
+                     "testimonial_name": "Chriss Turner",
+                     "testimonial_deg": "CEO Enterprise",
+                     "testimonial_image": "\/assets\/img\/team\/people\/people-5.jpg",
+                     "index": 0
+                  },
+                  "3": {
+                     "testimonial_title": "They are the best",
+                     "testimonial_text": "Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.",
+                     "testimonial_name": "Chriss Turner",
+                     "testimonial_deg": "CEO Enterprise",
+                     "testimonial_image": "\/assets\/img\/team\/people\/people-5.jpg",
+                     "index": 0
+                  }
+               }
+            },
+            "build":{
+               "id":"build",
+               "setting":"sierra_build",
+               "label":"TODO MAKE SURE ITS CORRECT  team members",
+               "content":{
+                  "0":{
+                     "build_image_title": "Business 1",
+                     "build_team_image": "\/assets\/img\/team\/people\/people-1.jpg",
+                     "index": 0
+                  },
+                  "1":{
+                     "build_image_title": "Business 2",
+                     "build_team_image": "/assets\/img\/team\/people\/people-1.jpg",
+                     "index": 1
+                  },
+                  "2":{
+                     "build_image_title": "Business 3",
+                     "build_team_image": "\/assets\/img\/team\/people\/people-1.jpg",
+                     "index": 2
+                  },
+                  "3":{
+                     "build_image_title": "Business 4",
+                     "build_team_image": "\/assets\/img\/team\/people\/people-1.jpg",
+                     "index": 3
+                  }
+               }
+            }
+         }
+      }
+   }
+}
