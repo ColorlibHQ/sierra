@@ -47,9 +47,7 @@ $section_items_column = 12 / intval( $fields[ 'feature_column_group' ] );
             </div>
             <div class="row feature_inner">
 				<?php
-                echo '<pre>';
-                print_r($fields);
-                echo '</pre>';
+
 				foreach ( $fields['feature'] as $key => $value ){
 					?>
                     <div class="col-lg-<?php echo intval( $section_items_column ); ?> col-sm-6">

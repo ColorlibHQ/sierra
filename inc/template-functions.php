@@ -291,3 +291,19 @@ add_filter( 'show_epsilon_quickie_bar', function (){
     return false;
 } );
 
+
+// Set contact form 7 default form template
+function sierra_contact7_form_content( $template, $prop ) {
+
+    if ( 'form' == $prop ) {
+
+        $template =
+            '<div class="form-group">[text* your-name id:name class:form-control placeholder "Name"]</div><div class="form-group">[email* your-email id:email class:form-control placeholder "Email"]</div><div class="form-group">[text* subject id:subject class:form-control placeholder "Subject"]</div><div class="form-group">[textarea* message id:message class:form-control rows:1 placeholder "Message"]</div><div class="form-group">[submit class:btn class:submit_btn class:form-control "Submit"]</div>';
+
+        return $template;
+
+    } else {
+        return $template;
+    }
+}
+add_filter( 'wpcf7_default_template', 'sierra_contact7_form_content', 10, 2 );

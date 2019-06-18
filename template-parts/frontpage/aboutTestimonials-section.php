@@ -22,25 +22,32 @@ $parent_attr = array(
 			<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Sierra_Repeatable_Sections', 'aboutTestimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
             <div class="testimonials_slider owl-carousel">
 				<?php
+                $testimonialGroup = $fields['testimonials_grouping'];
+
+
 				if( ! empty( $fields[ 'testimonials' ] ) ) {
 					foreach ( $fields[ 'testimonials' ] as $key => $values ) {
-						?>
-                        <div class="item">
-                            <div class="testi_item">
-                                <h3><?php echo esc_html( $values[ 'testimonial_title' ] ); ?></h3>
-								<?php echo wp_kses_post( wpautop( $values[ 'testimonial_text' ] ) ); ?>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img class="rounded-circle" src="<?php echo esc_url( $values[ 'testimonial_image' ] ); ?>" alt="<?php echo esc_html( $values[ 'testimonial_name' ] ); ?>">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4><?php echo esc_html( $values[ 'testimonial_name' ] ); ?></h4>
-                                        <h5><?php echo esc_html( $values[ 'testimonial_deg' ] ); ?></h5>
+                        if( in_array( $values['testimonial_title'], $testimonialGroup ) || $testimonialGroup[0] == 'all' ) {
+                            ?>
+                            <div class="item">
+                                <div class="testi_item">
+                                    <h3><?php echo esc_html($values['testimonial_title']); ?></h3>
+                                    <?php echo wp_kses_post(wpautop($values['testimonial_text'])); ?>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img class="rounded-circle"
+                                                 src="<?php echo esc_url($values['testimonial_image']); ?>"
+                                                 alt="<?php echo esc_html($values['testimonial_name']); ?>">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><?php echo esc_html($values['testimonial_name']); ?></h4>
+                                            <h5><?php echo esc_html($values['testimonial_deg']); ?></h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-						<?php
+                            <?php
+                        }
 					}
 				}
 				?>

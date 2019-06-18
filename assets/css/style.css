@@ -1242,6 +1242,7 @@ select{
   font-weight: 500;
   line-height: 28px;
   padding: 25px 0px 55px 0px;
+  color: #fff
 }
 
 .shap_slider_inner .item .media {
@@ -1270,6 +1271,7 @@ select{
   font-size: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  color: #fff
 }
 
 .shap_slider_inner .owl-dots {
@@ -1378,6 +1380,7 @@ select{
 .submit_btn:hover {
   background-position: right center;
   color: #fff;
+  border-color: #8cc4fb;
 }
 
 .submit_btn:focus {
@@ -2090,6 +2093,17 @@ select{
   font-family: "Roboto", sans-serif;
   color: #0b1033;
 }
+.newsletter_form .input-group {
+  display: block;
+}
+.newsletter_form .input-group .form-control{
+  width: 100%;
+}
+.newsletter_form .input-group-btn .btn.btn-secondary{
+  width: 176px;
+  margin-top: 25px;
+  border-radius: 35px;
+}
 
 .widget_search .input-group {
   display: block;
@@ -2098,7 +2112,7 @@ select{
 
 .input-group-btn .btn.btn-secondary{
   width: 30px;
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 .widget_search .input-group input {
@@ -2295,8 +2309,10 @@ select{
 }
 
 .s_blog_tags ul li a {
-  font-size: 14px;
-  color: #0b1033;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #7c8d93;
 }
 
 .s_blog_tags ul li:first-child {

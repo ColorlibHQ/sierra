@@ -146,7 +146,6 @@ function sierra_common_custom_css() {
         }
         
         .blog_img .blog_date {
-            background: {$accent_color};
             background: -moz-linear-gradient(left, {$accent_color} 0%, {$accent_color2} 100%);
             /* FF3.6-15 */
             background: -webkit-linear-gradient(left, {$accent_color} 0%, {$accent_color2} 100%);

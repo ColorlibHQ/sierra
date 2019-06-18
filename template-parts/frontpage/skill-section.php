@@ -48,21 +48,24 @@ $parent_attr = array(
 			                <?php } ?>
                             <div class="our_skill_inner">
 				                <?php
+                                $groupField = $fields['skill_grouping'];
 				                if ( ! empty( $fields['skill'] ) ) {
 					                foreach ( $fields['skill'] as $key => $value ) {
-						                ?>
-                                        <div class="single_skill">
-                                            <h3><?php echo esc_html( $value['skill_title'] ); ?></h3>
-                                            <div class="progress"
-                                                 data-value="<?php echo esc_html( $value['skill_text'] ); ?>">
-                                                <div class="progress-bar">
-                                                    <div class="progress_parcent"><span
-                                                                class="counter"><?php echo esc_html( $value['skill_text'] ); ?></span>%
+					                    if( in_array( $value['skill_title'], $groupField ) || $groupField[0] == 'all' ) {
+                                            ?>
+                                            <div class="single_skill">
+                                                <h3><?php echo esc_html($value['skill_title']); ?></h3>
+                                                <div class="progress"
+                                                     data-value="<?php echo esc_html($value['skill_text']); ?>">
+                                                    <div class="progress-bar">
+                                                        <div class="progress_parcent"><span
+                                                                    class="counter"><?php echo esc_html($value['skill_text']); ?></span>%
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-						                <?php
+                                            <?php
+                                        }
 					                }
 				                }
 				                ?>

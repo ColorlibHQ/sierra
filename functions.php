@@ -198,6 +198,7 @@ if( ! function_exists( 'sierra_scripts' ) ) :
 		wp_enqueue_script( 'jquery-waypoints', get_theme_file_uri( '/assets/vendors/counterup/jquery.waypoints.min.js' ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'jquery-counterup', get_theme_file_uri( '/assets/vendors/counterup/jquery.counterup.min.js' ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'apear', get_theme_file_uri( '/assets/vendors/counterup/apear.js' ), array( 'jquery' ), false, true );
+		wp_enqueue_script( 'ajaxchimp', get_theme_file_uri( '/assets/js/jquery.ajaxchimp.min.js' ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'countto', get_theme_file_uri( '/assets/vendors/counterup/countto.js' ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'owl-carousel', get_theme_file_uri( '/assets/vendors/owl-carousel/owl.carousel.min.js' ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'jquery-magnific-popup', get_theme_file_uri( '/assets/vendors/magnify-popup/jquery.magnific-popup.min.js' ), array( 'jquery' ), false, true );

@@ -154,7 +154,27 @@ if( is_single() ) : ?>
                 ?>
             </div>
             <p><?php echo sierra_excerpt( '45' ); ?></p>
+            <?php
+            if( get_theme_mod( 'sierra_show_single_post_tags', true ) ) {
+                if ( has_tag() ) :
+                    ?>
+                    <div class="s_blog_tags">
+                        <h3><?php esc_html_e( 'Tags :', 'sierra' ); ?></h3>
+                        <ul>
+                            <?php
+                            $sierra_tag = get_the_tags();
+                            foreach ( $sierra_tag as $tags ) {
+                                echo '<li><a href="' . get_tag_link( $tags->term_id ) . '">' . $tags->name . '</a>,</li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                <?php
+                endif;
+            }
+            ?>
             <a class="more_btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'sierra' ); ?></a>
+
         </div>
     </div>
 
