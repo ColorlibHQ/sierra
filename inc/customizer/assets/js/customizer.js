@@ -42,18 +42,18 @@ Sierra.Customizer = {
    * Disable a select if it does not have values
    * @param id
    */
-  checkValuesAndDisable: function( id ) {
-    var select = jQuery( id ).find( 'select' ),
-        options;
-    if ( select.length ) {
-      select.val( 0 );
-      options = select.find( 'option' );
-    }
-
-    if ( 1 === options.length ) {
-      select.prop( 'disabled', true );
-    }
-  },
+  // checkValuesAndDisable: function( id ) {
+  //   var select = jQuery( id ).find( 'select' ),
+  //       options;
+  //   if ( select.length ) {
+  //     select.val( 0 );
+  //     options = select.find( 'option' );
+  //   }
+  //
+  //   if ( 1 === options.length ) {
+  //     select.prop( 'disabled', true );
+  //   }
+  // },
 
   /**
    * Populates selects based on another option
@@ -205,14 +205,14 @@ wp.customize.bind( 'ready', function() {
 
     Sierra.Customizer.pairedSettings( obj, wp.customize );
 
-  var activeCallbacked = {
-    'show_on_front': {
-      value: 'page',
-      fields: [ 'accordion-section-sierra_repeatable_section' ]
-    }
-  };
+  // var activeCallbacked = {
+  //   'show_on_front': {
+  //     value: 'page',
+  //     fields: [ 'accordion-section-sierra_repeatable_section' ]
+  //   }
+  // };
 
-    Sierra.Customizer.checkValuesAndDisable( '#customize-control-sierra_contact_form' );
+    // Sierra.Customizer.checkValuesAndDisable( '#customize-control-sierra_contact_form' );
     Sierra.Customizer.pairedSettings( obj, wp.customize );
   //Sierra.Customizer.handleActiveCallback( activeCallbacked );
     Sierra.Customizer.handleAwfulSorting();

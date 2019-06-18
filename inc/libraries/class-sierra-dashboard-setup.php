@@ -81,7 +81,7 @@ class Sierra_Dashboard_Setup {
 		}
 
 		if ( empty( $this->notice ) ) {
-			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/macho-themes-logo-black.png" class="epsilon-author-logo" />';
+			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/colorlib-logo-dark.png" class="epsilon-author-logo" />';
 
 
 			/* Translators: Notice Title */
@@ -138,6 +138,7 @@ class Sierra_Dashboard_Setup {
 	 * @return array
 	 */
 	public function get_steps() {
+	    $url = 'https://www.machothemes.com';
 		return array(
 			array(
 				'id'       => 'landing',
@@ -177,7 +178,7 @@ class Sierra_Dashboard_Setup {
 				'content'  => array(
 					'paragraphs' => array(
 						wp_kses_post( esc_html__( 'We\'ve made it easy for you to get up and running in a jiffy. Just pick any of the theme demos below, click on Select, Import and you\'ll be ready in no time. Feel free to skip this step if you\'d like to create the content yourself.', 'sierra' ) ),
-						wp_kses_post( esc_html__( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'sierra' ) )
+						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'sierra' ) )
 					),
 				),
 				'progress' => esc_html__( 'Demos', 'sierra' ),
@@ -194,7 +195,7 @@ class Sierra_Dashboard_Setup {
 				'title'    => esc_html__( 'Almost ready', 'sierra' ),
 				'content'  => array(
 					'paragraphs' => array(
-						esc_html__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.machothemes.com">MachoThemes</a>.', 'sierra' ),
+					    sprintf( __('Your new theme has been all set up. Enjoy your new theme by %s MachoThemes %s', 'sierra' ), '<a href="'.esc_url($url).'">', '</a>' ),
 						esc_html__( 'Allow MachoThemes to track theme usage.', 'sierra' ),
 						$this->get_permission_content(),
 					),
@@ -312,21 +313,6 @@ class Sierra_Dashboard_Setup {
 					),
 				),
 			),
-			array(
-				'id'          => 'sierra-check-sierra-portfolio',
-				'title'       => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'title', 'Portfolio', 'verify_upPortfolio' ),
-				'description' => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'description', 'Portfolio', 'verify_upPortfolio' ),
-				'plugin_slug' => 'sierra-portfolio',
-				'state'       => false,
-				'check'       => defined( 'UPWP_VERSION' ),
-				'actions'     => array(
-					array(
-						'label'   => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'installed', 'Portfolio', 'verify_upPortfolio' ) ? esc_html__( 'Activate Plugin', 'sierra' ) : esc_html__( 'Install Plugin', 'sierra' ),
-						'type'    => 'handle-plugin',
-						'handler' => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'installed', 'Portfolio', 'verify_upPortfolio' ),
-					),
-				),
-			),
 		);
 	}
 
@@ -355,13 +341,6 @@ class Sierra_Dashboard_Setup {
 				'description' => Sierra_Notify_System::plugin_verifier( 'mailchimp-for-wp', 'description', 'Mailchimp', 'verify_mc4wp' ),
 				'plugin_slug' => 'mailchimp-for-wp',
 				'check'       => defined( 'MC4WP_VERSION' ),
-			),
-			array(
-				'id'          => 'sierra-check-sierra-portfolio',
-				'title'       => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'title', 'Portfolio', 'verify_upPortfolio' ),
-				'description' => Sierra_Notify_System::plugin_verifier( 'sierra-portfolio', 'description', 'Portfolio', 'verify_upPortfolio' ),
-				'plugin_slug' => 'sierra-portfolio',
-				'check'       => defined( 'UPWP_VERSION' ),
 			),
 		);
 	}
@@ -402,7 +381,7 @@ class Sierra_Dashboard_Setup {
 						'title'     => esc_html__( 'Lend a hand and share your thoughts', 'sierra' ),
 						'paragraph' => vsprintf(
 						// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-							esc_html__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'sierra' ),
+							__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'sierra' ),
 							array(
 								$theme->get( 'Name' ),
 							)

@@ -1,24 +1,25 @@
-<?php if( is_single() ) : ?>
+<?php
+if( is_single() ) : ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class( 's_blog_main' ); ?>>
         <div class="blog_img">
             <?php
-	            if( get_theme_mod( 'sierra_show_single_post_thumbnail', true ) ) {
-		            if ( has_post_thumbnail() ) {
-			            the_post_thumbnail( 'sierra-post-thumb', array( 'class' => 'img-fluid' ) );
-		            } else {
-			            ?>
-                        <img class="img-fluid"
-                             src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-placeholder.png"
-                             alt="">
-			            <?php
-		            }
-	            }
-            if( get_theme_mod( 'sierra_show_single_post_date', true ) ) {
-	            ?>
-                <div class="blog_date">
-		            <?php sierra_post_date_format(); ?>
-                </div>
-	            <?php
+            $thumnbail = get_theme_mod( 'sierra_show_single_post_thumbnail', true );
+            $date      = get_theme_mod( 'sierra_show_single_post_date', true );
+            if( $thumnbail ) {
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail( 'sierra-post-thumb', array( 'class' => 'img-fluid' ) );
+                } else {
+                    ?>
+                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-placeholder.png" alt="<?php echo esc_html__( 'Thumbnail Placeholder', 'sierra' ) ?>">
+                    <?php
+                }
+                if( $date ) {
+                    ?>
+                    <div class="blog_date">
+                        <?php sierra_post_date_format(); ?>
+                    </div>
+                    <?php
+                }
             }
             ?>
         </div>
@@ -26,16 +27,22 @@
             <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
             <div class="blog_author">
                 <?php
+                    if( $thumnbail == false && $date == true ) {
+                        echo '<a href="">'. get_the_time( 'j F, Y' ) .'</a>';
+                    }
 	                if( get_theme_mod( 'sierra_enable_author_box', true ) ) {
 		                ?>
-                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php esc_html_e( 'By', 'sierra' ); ?><?php echo get_the_author_meta( 'display_name' ); ?></a>
+                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php esc_html_e( 'By ', 'sierra' ); ?><?php echo get_the_author_meta( 'display_name' ); ?></a>
 		                <?php
 	                }
                 ?>
                 <?php
-                $sierra_post_category = get_the_category();
+                if( get_theme_mod( 'sierra_show_single_post_categories', true ) ) {
+                    $sierra_post_category = get_the_category();
                 ?>
                 <a href="<?php echo esc_url( get_category_link( $sierra_post_category[0]->term_id ) ); ?>"><?php print $sierra_post_category[0]->name; ?></a>
+                    <?php
+                } ?>
             </div>
             <?php the_content(); ?>
             <?php
@@ -84,40 +91,56 @@
 	        ?>
         </div>
     </div>
-    <?php sierra_post_share(); ?>
-    <?php sierra_author_bio(); ?>
+    <?php
+        $author_meta = get_the_author_meta('description');
+        sierra_post_share();
+        if( !empty( $author_meta ) ){
+            sierra_author_bio();
+
+        }
+
+
+
+        ?>
 <?php else: ?>
 
     <div id="post-<?php the_ID(); ?>" <?php post_class( 'blog_main_item' ); ?>>
         <div class="blog_img">
             <?php
-            if( get_theme_mod( 'sierra_show_single_post_thumbnail', true ) ) {
+            $thumnbail = get_theme_mod( 'sierra_show_single_post_thumbnail', true );
+            $date      = get_theme_mod( 'sierra_show_single_post_date', true );
+            if( $thumnbail ) {
 	            if ( has_post_thumbnail() ) {
 		            the_post_thumbnail( 'sierra-post-thumb', array( 'class' => 'img-fluid' ) );
 	            } else {
 		            ?>
                     <img class="img-fluid"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-placeholder.png" alt="">
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-placeholder.png" alt="<?php echo esc_html__( 'Thumbnail Placeholder', 'sierra' ) ?>">
 		            <?php
 	            }
+
+                if( $date ) {
+                    ?>
+                    <div class="blog_date">
+                        <?php sierra_post_date_format(); ?>
+                    </div>
+                    <?php
+                }
             }
 
-            if( get_theme_mod( 'sierra_show_single_post_date', true ) ) {
-            ?>
-                <div class="blog_date">
-		            <?php sierra_post_date_format(); ?>
-                </div>
-	            <?php
-            }
+
             ?>
         </div>
         <div class="blog_text">
             <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
             <div class="blog_author">
                 <?php
+                if( $thumnbail == false && $date == true ) {
+                    echo '<a href="">'. get_the_time( 'j F, Y' ) .'</a>';
+                }
                 if( get_theme_mod( 'sierra_enable_author_box', true ) ) {
 	                ?>
-                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php esc_html_e( 'By', 'sierra' ); ?><?php echo get_the_author_meta( 'display_name' ); ?></a>
+                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php esc_html_e( 'By ', 'sierra' ); ?><?php echo get_the_author_meta( 'display_name' ); ?></a>
 	                <?php
                 }
                 ?>

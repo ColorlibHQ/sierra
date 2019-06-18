@@ -129,7 +129,7 @@ Epsilon_Customizer::add_field(
 		),
 		'selectors'     => array(
 			'.post-content p',
-             'p',
+            'p',
 			'.feature_item p',
 			'.text_3d p',
 			'.team_people_text p',
@@ -137,7 +137,6 @@ Epsilon_Customizer::add_field(
 			'.challange_text_inner p',
 			'.testimonials_slider .owl-item.center p',
 			'.left_company_text p',
-			'.blog_text p',
 			'.s_solution_item p',
 		),
 		'font_defaults' => array(
@@ -216,6 +215,7 @@ Epsilon_Customizer::add_field(
 		'label'   => esc_html__( 'Footer BG', 'sierra' ),
 		'type'    => 'epsilon-image',
 		'size'    => 'original',
+        'sanitize_callback' => 'sanitize_text_field',
 		'default-image' => esc_url( get_template_directory_uri() . '/assets/img/footer-bg.jpg' ),
 		'section' => 'sierra_footer_section',
 	)
@@ -308,11 +308,12 @@ Epsilon_Customizer::add_field(
 /**
  * Copyright contents
  */
+$url = 'https://colorlib.com';
 Epsilon_Customizer::add_field(
 	'sierra_copyright_contents',
 	array(
 		'type'    => 'epsilon-text-editor',
-		'default' => 'Colorlib Themes © 2018. All rights reserved.',
+		'default' => sprintf('COPYRIGHT ©2019 ALL RIGHTS RESERVED | THIS TEMPLATE IS MADE WITH  BY <a href="%s">COLORLIB</a>.', $url),
 		'label'   => esc_html__( 'Copyright Text', 'sierra' ),
 		'section' => 'sierra_footer_section',
 	)
@@ -505,7 +506,7 @@ Epsilon_Customizer::add_field(
 			'testimonial_image'    => array(
 				'label'   => esc_html__( 'Image', 'sierra' ),
 				'type'    => 'epsilon-image',
-				'size'    => 'medium',
+				'size'    => 'thumbnail',
 				'default' => esc_url( get_template_directory_uri() . '/assets/img/team/people/people-5.jpg' ),
 			),
 		),
@@ -720,3 +721,232 @@ Epsilon_Customizer::add_field(
 		'repeatable_sections' => Sierra_Repeatable_Sections::get_instance()->sections,
 	)
 );
+
+
+
+
+
+/*========================================
+Color Option
+==========================================*/
+
+Epsilon_Customizer::add_field(
+    'epsilon_accent_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Accent Color #1', 'sierra' ),
+        'description' => esc_html__( 'Theme main color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#7699F5',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_accent_color_second',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Accent Color #2', 'sierra' ),
+        'description' => esc_html__( 'The second main color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#B2AADB',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_title_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Title Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for titles.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#0b1033',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_text_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Text Color', 'sierra' ),
+        'description' => esc_html__( 'TThe color used for paragraphs.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#7c8d93',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_widgettitle_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Widget Title Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for wifget title.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#0b1033',
+    )
+);
+
+
+
+Epsilon_Customizer::add_field(
+    'epsilon_link_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Link Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for links.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_link_hover_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Link Hover Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for hovered links.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_header_background',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Header background color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the header background.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_menu_item_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Menu item color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the menu item color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_menu_item_hover_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Menu item hover color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the menu item hover color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#0b1033',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_menu_item_active_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Menu item active color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the menu item active color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#0b1033',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_dropdown_menu_background',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Dropdown background', 'sierra' ),
+        'description' => esc_html__( 'The color used for the menu background.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#171717',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_dropdown_menu_hover_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Dropdown Menu Hover Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the dropdown menu hover color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#97ccfe',
+    )
+);
+
+
+Epsilon_Customizer::add_field(
+    'epsilon_footer_background',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Background Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the footer background.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#11173b',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_footer_title_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Title Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the footer title color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_footer_text_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Text Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the footer text color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#2a2f56',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_footer_link_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Link Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the footer text color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#007bff',
+    )
+);
+
+Epsilon_Customizer::add_field(
+    'epsilon_footer_link_hover_color',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Link Hover Color', 'sierra' ),
+        'description' => esc_html__( 'The color used for the footer text color.', 'sierra' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#0056b3',
+    )
+);
+
+

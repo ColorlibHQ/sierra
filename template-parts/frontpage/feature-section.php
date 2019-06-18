@@ -1,4 +1,5 @@
 <?php
+$section_id = !empty( $section_id ) ? $section_id : '';
 $elements = Epsilon_Page_Generator::get_instance( 'sierra_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields = $elements->sections[ $section_id ];
 
@@ -10,12 +11,13 @@ $fields['feature'] = $elements->get_repeater_field( $fields['feature_repeater_fi
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'feature', Sierra_Repeatable_Sections::get_instance() );
 $parent_attr = array(
 	'class' => array( 'feature_area', 'ewf-section', 'contrast' ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat'),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat')
 );
+
 $section_items_column = 12 / intval( $fields[ 'feature_column_group' ] );
 ?>
 
-<section data-customizer-section-id="sierra_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="sierra_repeatable_section_<?php echo esc_attr( $section_id ); ?>" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div <?php $attr_helper->generate_attributes($parent_attr); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
@@ -45,6 +47,9 @@ $section_items_column = 12 / intval( $fields[ 'feature_column_group' ] );
             </div>
             <div class="row feature_inner">
 				<?php
+                echo '<pre>';
+                print_r($fields);
+                echo '</pre>';
 				foreach ( $fields['feature'] as $key => $value ){
 					?>
                     <div class="col-lg-<?php echo intval( $section_items_column ); ?> col-sm-6">

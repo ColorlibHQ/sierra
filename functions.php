@@ -54,6 +54,7 @@ if( ! function_exists( 'sierra_setup' ) ) :
 			'width'       => 250,
 			'height'      => 250,
 			'flex-width'  => true,
+            'header-text'   => array( 'site-title', 'site-description' ),
 		) );
 
 		// Add theme support for custom header
@@ -65,10 +66,8 @@ if( ! function_exists( 'sierra_setup' ) ) :
 		add_theme_support( 'custom-header', $header_info );
 
 		// Add theme support for custom background
-		$custom_bg_args = array(
-			'default-color' => '000000',
-		);
-		add_theme_support( 'custom-background', $custom_bg_args );
+
+		add_theme_support( 'custom-background' );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -181,7 +180,9 @@ if( ! function_exists( 'sierra_scripts' ) ) :
 		wp_enqueue_style( 'responsive', get_theme_file_uri( '/assets/css/responsive.css' ) );
 		// js
 		//Include all compiled plugins (below), or include individual files as needed
-		wp_enqueue_script( 'jquery-3-2-1-min', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array( 'jquery' ), false, true );
+		//wp_enqueue_script( 'jquery-3-2-1-min', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array( 'jquery' ), false, true );
+
+
 		wp_enqueue_script( 'popper-min-js', get_theme_file_uri('/assets/js/popper.min.js'), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'bootstrap-min-js', get_theme_file_uri('/assets/js/bootstrap.min.js'), array( 'jquery' ), false, true );
 		// Rev slider js
@@ -229,6 +230,9 @@ endif;
 // Required theme custom function
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 
+// Required theme common css
+require get_parent_theme_file_path( '/inc/common-css.php' );
+
 // Required custom widget
 require get_parent_theme_file_path( '/inc/widget/widget_setting.php' );
 
@@ -239,6 +243,24 @@ require get_parent_theme_file_path( '/inc/sierra-wp-bootstrap-navwalker.php' );
 require get_parent_theme_file_path( '/inc/class-tgm-plugin-activation.php' );
 require get_parent_theme_file_path( '/inc/sierra_add_plugin.php' );
 
+
+
+// theme option callback
+function sierra_opt( $id = null, $default = '' ) {
+
+    $opt = get_theme_mod( $id, $default );
+
+    $data = '';
+
+    if( $opt ) {
+        $data = $opt;
+    }
+
+    return $data;
+}
+
+
+
 /**
  * Load Autoloader
  */
@@ -247,3 +269,4 @@ require_once 'inc/class-sierra-autoloader.php';
 if( class_exists( 'Epsilon_Framework' ) ){
 	$sierra = Sierra::get_instance();
 }
+

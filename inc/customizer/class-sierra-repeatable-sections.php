@@ -198,7 +198,7 @@ class Sierra_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'sierra_feature_section',
-					'navigateToLabel' => esc_html__( 'Add Testimonials &rarr;', 'sierra' ),
+					'navigateToLabel' => esc_html__( 'Add Feature &rarr;', 'sierra' ),
 				),
 				'feature_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -299,7 +299,7 @@ class Sierra_Repeatable_Sections {
 				'testimonial_section_image_right'    => array(
 					'label'   => esc_html__( 'Image', 'sierra' ),
 					'type'    => 'epsilon-image',
-					'size'    => 'medium',
+					'size'    => 'full',
 					'default' => esc_url( get_template_directory_uri() . '/assets/img/iphone4.png' ),
 				),
 				'testimonials_grouping'          => array(

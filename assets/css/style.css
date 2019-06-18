@@ -1,19 +1,13 @@
 /*----------------------------------------------------
 @File: Default Styles
-@Author: Rocky
-@URL: http://wethemez.com
-Author E-mail: rockybd1995@gmail.com
+@Author: Ajanta
+@URL: http://ajanta.me
 
 This file contains the styling for the actual theme, this
 is the file you need to edit to change the look of the
 theme.
 ---------------------------------------------------- */
 /*=====================================================================
-@Template Name: Cerative Agency
-@Author: Rocky
-@Developed By: Rocky
-@Developer URL: http://rocky.wethemez.com
-Author E-mail: rockybd1995@gmail.com
 
 @Default Styles
 
@@ -220,6 +214,13 @@ select{
 /*----------------------------------------------------*/
 /* Main Menu Area css
 ============================================================================================ */
+
+.admin-bar .navbar_fixed {
+  margin-top: 32px;
+}
+.header-tagline{
+  margin-left: 10px;
+}
 .main_menu_area {
   position: absolute;
   left: 0px;
@@ -232,7 +233,7 @@ select{
     color: #0b1033;
     font-family: "Roboto", sans-serif;
     font-size: 25px;
-    margin: 0;
+    margin: 45px 0;
     padding: 0;
     text-transform: uppercase;
     font-weight: 700;
@@ -376,7 +377,7 @@ select{
   transition: transform 500ms ease, background 500ms ease;
   transition: transform 500ms ease, background 500ms ease, -webkit-transform 500ms ease;
   -webkit-transition: transform 500ms ease, background 500ms ease;
-  z-index: 999999;
+  z-index: 99999;
 }
 
 .main_menu_area.navbar_fixed .navbar .navbar-nav li a {
@@ -567,7 +568,10 @@ select{
 .testimonials_slider .testi_item .media .d-flex {
   padding-right: 20px;
 }
-
+.testimonials_slider .testi_item .media .d-flex img{
+  max-width: 42px;
+  max-height: 42px;
+}
 .testimonials_slider .testi_item .media .media-body h4 {
   font-size: 15px;
   font-family: "Roboto", sans-serif;
@@ -603,9 +607,18 @@ select{
 .testimonials_slider .owl-dots .owl-dot:last-child {
   margin-right: 0px;
 }
+.shap_slider_inner .media img {
+  max-width: 42px;
+  border-radius: 50%;
+}
+.shap_slider_inner .media .media-body h5,
+.shap_slider_inner .media .media-body h6{
+  margin: 0;
+}
 
-/* End Testimonials Slider css
-============================================================================================ */
+
+  /* End Testimonials Slider css
+  ============================================================================================ */
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Feature Area css
@@ -2083,6 +2096,11 @@ select{
   position: relative;
 }
 
+.input-group-btn .btn.btn-secondary{
+  width: 30px;
+  margin-top: 0 !important;
+}
+
 .widget_search .input-group input {
   width: 100%;
   display: block;
@@ -2093,7 +2111,7 @@ select{
   -webkit-border-image: -webkit-linear-gradient(180deg, #9b8aff 0%, #6ebdfe 100%);
   border-image: -webkit-linear-gradient(180deg, #9b8aff 0%, #6ebdfe 100%);
   border-image: -ms-linear-gradient(180deg, #9b8aff 0%, #6ebdfe 100%);
-  border-image-slice: 1;
+  border-image-slice: 1 !important;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
@@ -2168,7 +2186,10 @@ select{
 .widget_categories ul li {
   margin-bottom: 10px;
 }
-
+.widget ul li a{
+  color: #7c8d93;
+  transition: 0.5s;
+}
 .widget_categories ul li a {
   font-size: 15px;
   font-family: "Roboto", sans-serif;

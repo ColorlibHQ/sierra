@@ -3,18 +3,39 @@
 /**
  * Custom Page banner
  */
+
+
 if( ! function_exists( 'sierra_page_banner' ) ) {
 	function sierra_page_banner(){
-	    global $post;
-		$value = get_post_meta( $post->ID, 'sierra_page_subtitle_meta', true );
+		$value = get_post_meta( get_the_ID(), 'sierra_page_subtitle_meta', true );
 		?>
 		<section class="banner_area">
 			<div class="container">
 				<div class="banner_inner_text">
-					<h2><?php echo esc_html( get_the_title() ); ?></h2>
-                    <?php if( ! empty( $value ) ){ ?>
-					<p><?php echo esc_html( $value ); ?></p>
-                    <?php } ?>
+                    <?php
+                    if( is_singular( 'post' ) ){
+                        the_title('<h2>', '</h2>');
+                    }elseif ( is_singular( 'page' ) ){
+                        the_title('<h2>', '</h2>');
+                    }elseif ( is_home() ){
+                        echo '<h2>'.esc_html__( 'Blog', 'sierra' ).'</h2>';
+                    }elseif ( is_archive() ){
+                        echo '<h2>'.get_the_archive_title().'</h2>';
+                    }elseif ( is_search() ){
+                        echo '<h2>'. esc_html__('Search for: ', 'sierra') . get_search_query() .'</h2>';
+                    }elseif( is_404() ){
+                        echo '<h2>'. esc_html__('404 Error ', 'sierra') .'</h2>';
+                    }else{
+                        the_title('<h2>', '</h2>');
+                    }
+
+
+                    if( ! empty( $value ) ){
+                        echo '<p>'.esc_html( $value ).'</p>';
+                    }
+
+
+                    ?>
 				</div>
 			</div>
 		</section>
@@ -85,7 +106,7 @@ if( ! function_exists( 'sierra_portfolio_shortcode' ) ){
  * Page meta box for banner subtitle
  */
 function sierra_page_subtitle_meta() {
-	add_meta_box( 'page-subtitle-meta-box-id', esc_html__( 'Page Subtitle', 'sierra' ), 'sierra_meta_display_callback', 'page' );
+	add_meta_box( 'page-subtitle-meta-box-id', esc_html__( 'Page Subtitle', 'sierra' ), 'sierra_meta_display_callback', 'page', 'side' );
 }
 add_action( 'add_meta_boxes', 'sierra_page_subtitle_meta' );
 function sierra_meta_display_callback( $post ) {
@@ -94,7 +115,7 @@ function sierra_meta_display_callback( $post ) {
     <label for="text_field">
 		<?php esc_html_e( 'Page Subtitle :', 'sierra' ); ?>
     </label>
-    <input type="text" id="text_field" name="sierra_page_meta_value" value="<?php echo esc_attr( $value ); ?>" size="25" />
+    <textarea name="sierra_page_meta_value" id="text_field" cols="30" rows="5"><?php echo esc_attr( $value ); ?></textarea>
 	<?php
 }
 function sierra_save_meta_box( $post_id ) {
@@ -125,20 +146,7 @@ if( ! function_exists( 'sierra_post_pagination' ) ) {
 /**
  * Custom function for social share blog post
  */
-function hopecharity_post_share(){
 
-	?>
-    <div class="share">
-        <label><?php esc_html_e( 'Share:', '' ); ?> </label>
-        <div class="share-social">
-            <a href="<?php print esc_url( $facebookURL ) ?>"><i class="fa fa-facebook"></i></a>
-            <a href="<?php print esc_url( $twitterURL ) ?>"><i class="fa fa-twitter"></i></a>
-            <a href="<?php print esc_url( $googleURL ) ?>"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-        </div>
-    </div>
-	<?php
-}
 if( ! function_exists( 'sierra_post_share' ) ) {
 	function sierra_post_share(){
 		global $post;

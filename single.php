@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php sierra_page_banner(); ?>
-
 <!--================Blog Main Area =================-->
 <section class="blog_main_area p_100">
 	<div class="container">

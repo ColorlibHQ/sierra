@@ -7,7 +7,6 @@
 
 get_header();
 
-sierra_page_banner();
 ?>
 <?php
 $page_layout = Sierra_Helper::get_layout( 'sierra_page_layout' );

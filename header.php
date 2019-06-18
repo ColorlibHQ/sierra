@@ -20,16 +20,18 @@
 <header class="main_menu_area">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<?php
-		if ( ! function_exists( 'the_custom_logo' ) ) {
+
 			if ( has_custom_logo() ) {
 				Epsilon_Helper::get_image_with_custom_dimensions( 'sierra_logo_dimensions' );
 			}
 			else{
+			    if( display_header_text() ){
 				?>
-                <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name')?></a>
+                <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name')?></a><span class="header-tagline"><?php echo get_bloginfo( 'description' ) ?></span>
 				<?php
+			    }
 			}
-		}
+
 		?>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span></span>
@@ -51,3 +53,8 @@
 		</div>
 	</nav>
 </header>
+<?php
+    if( !is_front_page() && !is_404() || is_home() ){
+        sierra_page_banner();
+    }
+ ?>

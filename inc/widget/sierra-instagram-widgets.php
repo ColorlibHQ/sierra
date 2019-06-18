@@ -10,28 +10,27 @@
 			));
 		}
 		public function widget($args,$instance){
-			
-			$title = $args['before_title'];
-			$title .= $instance['title'];
-			$title .=$args['after_title'];
-			$insta_user = esc_html($instance['insta_user']);
-			$insta_items = esc_html($instance['insta_items']);
-			?>
-			
-				<?php 
-				print $args['before_widget'];
-				print($title); ?>
+
+            $title 		 = apply_filters( 'widget_title', $instance['title'] );
+            $insta_user  = apply_filters( 'widget_text', $instance['insta_user'] );
+            $insta_items = apply_filters( 'widget_text', $instance['insta_items'] );
+
+
+            echo wp_kses_post( $args['before_widget'] );
+            if ( ! empty( $title ) )
+                echo wp_kses_post( $args['before_title'] . $title . $args['after_title'] ); ?>
+
 				<div class="cp-module-inner">
 					<div class="cp-instagram-photos" data-username="<?php print $insta_user ?>" data-items="<?php print $insta_items ?>"></div>
 				</div>
-			<?php print $args['after_widget'];
+			<?php echo wp_kses_post( $args['after_widget'] );
 		}
 		
 		public function form($instance){
 			$data = array(
-				'title' => isset($instance['title'])?$instance['title']:esc_html('Instagram', 'sierra'),
-				'insta_user' => isset($instance['insta_user'])?$instance['insta_user']:'remonfoysal',
-				'insta_items' => isset($instance['insta_items'])?$instance['insta_items']:'6',
+				'title'      => isset($instance['title']) ? $instance['title'] : esc_html('Instagram', 'sierra'),
+				'insta_user' => isset($instance['insta_user']) ? $instance['insta_user'] : 'remonfoysal',
+				'insta_items'=> isset($instance['insta_items']) ? $instance['insta_items'] : '6',
 			);
 			
 			foreach($data as $key =>$value){
@@ -50,6 +49,17 @@
 				
 			}
 		}
+
+        // Updating widget replacing old instances with new
+        public function update( $new_instance, $old_instance ) {
+
+            $instance = array();
+            $instance['title'] 	    = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+            $instance['insta_user'] = ( ! empty( $new_instance['insta_user'] ) ) ? strip_tags( $new_instance['insta_user'] ) : '';
+            $instance['insta_items'] = ( ! empty( $new_instance['insta_items'] ) ) ? strip_tags( $new_instance['insta_items'] ) : '';
+            return $instance;
+
+        }
 	}
 	
 	/*----------------------------------------

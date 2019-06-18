@@ -1,10 +1,13 @@
 <!--================Footer Area =================-->
 <footer class="footr_area">
     <?php
-    if( is_active_sidebar( 'footer-sidebar-1' ) || is_active_sidebar( 'footer-sidebar-2' ) || is_active_sidebar( 'footer-sidebar-3' ) || is_active_sidebar( 'footer-sidebar-1' ) ) {
+    if( is_active_sidebar( 'footer-sidebar-1' ) || is_active_sidebar( 'footer-sidebar-2' ) || is_active_sidebar( 'footer-sidebar-3' ) ) {
 	    $footer_bg_url = get_theme_mod( 'sierra_footer_bg', true );
+        $footerbgImg = json_decode( $footer_bg_url );
+	    $footer_bg     = !empty( $footerbgImg->url ) ? 'style="background-image:url( '. esc_url( $footerbgImg->url ) .' )"' : '';
+
         ?>
-        <div class="footer_widget_area">
+        <div class="footer_widget_area" <?php echo $footer_bg; ?>>
             <div class="container">
                 <div class="row footer_widget_inner">
 				    <?php get_sidebar( 'footer' ); ?>
@@ -19,7 +22,9 @@
 			<div class="float-sm-left">
 				<h5>
 					<?php
-					echo wp_kses_post( get_theme_mod( 'sierra_copyright_contents', 'Copyright 2018 All rights reserved' ) );
+                    $url = 'https://colorlib.com';
+                    $footerText = sprintf( 'COPYRIGHT ©2019 ALL RIGHTS RESERVED | THIS TEMPLATE IS MADE WITH BY <a href="%s">COLORLIB</a>', $url  );
+					echo wp_kses_post( get_theme_mod( 'sierra_copyright_contents', $footerText ) );
 					?>
                 </h5>
 			</div>

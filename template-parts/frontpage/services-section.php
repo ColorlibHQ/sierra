@@ -15,7 +15,7 @@ $parent_attr = array(
 $section_items_column = 12 / intval( $fields[ 'services_column_group' ] );
 ?>
 
-<section data-customizer-section-id="sierra_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="sierra_repeatable_section_<?php echo esc_attr( $section_id ); ?>" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div <?php $attr_helper->generate_attributes($parent_attr); ?>>
         <?php
             $attr_helper->generate_color_overlay();

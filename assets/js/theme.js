@@ -1,4 +1,4 @@
-;(function($) {
+(function ( $ ) {
     "use strict";
     
     var nav_offset_top = $('header').height(); 
@@ -8,17 +8,18 @@
 
 	//* Navbar Fixed  
     function navbarFixed(){
-        if ( $('.main_menu_area').length ){ 
+        var mainMenu = $('.main_menu_area');
+        if ( mainMenu.length ){
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();   
                 if (scroll >= nav_offset_top ) {
-                    $(".main_menu_area").addClass("navbar_fixed");
+                    mainMenu.addClass("navbar_fixed");
                 } else {
-                    $(".main_menu_area").removeClass("navbar_fixed");
+                    mainMenu.removeClass("navbar_fixed");
                 }
             });
-        };
-    };
+        }
+    }
     navbarFixed();
     
     
@@ -27,8 +28,9 @@
     /*  Main Slider js
     /*----------------------------------------------------*/
     function main_slider(){
-        if ( $('#main_slider').length ){
-            $("#main_slider").revolution({
+        var mainSlider = $('#main_slider');
+        if ( mainSlider.length ){
+            mainSlider.revolution({
                 sliderType:"standard",
                 sliderLayout:"auto",
                 delay:5000,
@@ -93,8 +95,9 @@
     /*  Testimonials Slider
     /*----------------------------------------------------*/
     function testimoninals_carousel(){
-        if ( $('.testimonials_slider').length ){
-            $('.testimonials_slider').owlCarousel({
+        var testimonialSlider = $('.testimonials_slider');
+        if ( testimonialSlider.length ){
+            testimonialSlider.owlCarousel({
                 loop:true,
                 margin: 130,
                 items: 3,
@@ -133,8 +136,9 @@
     /*  Shap Slider
     /*----------------------------------------------------*/
     function shap_carousel(){
-        if ( $('.shap_slider_inner').length ){
-            $('.shap_slider_inner').owlCarousel({
+        var shapSlider = $('.shap_slider_inner');
+        if ( shapSlider.length ){
+            shapSlider.owlCarousel({
                 loop:true,
                 margin: 0,
                 items: 1,
@@ -184,11 +188,12 @@
     /*----------------------------------------------------*/
     /*  portfolio_isotope
     /*----------------------------------------------------*/
+    var portfolioInner = $('.ms_portfolio_inner');
     function home_gallery(){
-        if ( $('.ms_portfolio_inner').length ){
+        if ( portfolioInner.length ){
             // Activate isotope in container
-            $(".ms_portfolio_inner").imagesLoaded( function() {
-                $(".ms_portfolio_inner").isotope({
+            portfolioInner.imagesLoaded( function() {
+                portfolioInner.isotope({
                     itemSelector: '.ms_p_item',
                     layoutMode: 'masonry',
                     percentPosition:true,
@@ -203,14 +208,15 @@
     /*  Portfolio js
     /*----------------------------------------------------*/
     function portfolio_isotope(){
-        if ( $('.portfolio_filter ul li').length ){
+        var portfolioFilter = $('.portfolio_filter ul li');
+        if ( portfolioFilter.length ){
             // Add isotope click function
-            $(".portfolio_filter ul li").on('click',function(){
-                $(".portfolio_filter ul li").removeClass("active");
+            portfolioFilter.on('click',function(){
+                portfolioFilter.removeClass("active");
                 $(this).addClass("active");
 
                 var selector = $(this).attr("data-filter");
-                $(".ms_portfolio_inner").isotope({
+                portfolioInner.isotope({
                     filter: selector,
                     animationOptions: {
                         duration: 450,
@@ -257,15 +263,15 @@
     /*----------------------------------------------------*/
     /*  Google map js
     /*----------------------------------------------------*/
-    
-    if ( $('#mapBox1').length ){
-        var $lat = $('#mapBox1').data('lat');
-        var $lon = $('#mapBox1').data('lon');
-        var $zoom = $('#mapBox1').data('zoom');
-        var $marker = $('#mapBox1').data('marker');
-        var $info = $('#mapBox1').data('info');
-        var $markerLat = $('#mapBox1').data('mlat');
-        var $markerLon = $('#mapBox1').data('mlon');
+    var mapBox1 = $('#mapBox1');
+    if ( mapBox1.length ){
+        var $lat = mapBox1.data('lat');
+        var $lon = mapBox1.data('lon');
+        var $zoom = mapBox1.data('zoom');
+        var $marker = mapBox1.data('marker');
+        var $info = mapBox1.data('info');
+        var $markerLat = mapBox1.data('mlat');
+        var $markerLon = mapBox1.data('mlon');
         var map = new GMaps({
         el: '#mapBox1',
         lat: $lat,
@@ -302,8 +308,7 @@
             }
         })
     }
-    
-    
-    
-})(jQuery)
 
+
+
+}( jQuery ));

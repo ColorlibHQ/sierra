@@ -1,4 +1,5 @@
 <?php
+
 $element = Epsilon_Page_Generator::get_instance( 'sierra_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields = $element->sections[ $section_id ];
 
@@ -8,9 +9,13 @@ $grouping = array(
 );
 $fields[ 'testimonials' ] = $element->get_repeater_field( $fields[ 'testimonials_repeater_field' ], array(), $grouping );
 
+//echo '<pre>';
+//print_r( $fields );
+//echo '</pre>';
+
 ?>
 
-<section class="best_3d_area" data-customizer-section-id="sierra_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section class="best_3d_area" data-customizer-section-id="sierra_repeatable_section_<?php echo esc_attr( $section_id ); ?>" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Sierra_Repeatable_Sections', 'testimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div class="left_3d">
 		<div class="shap_slider_inner owl-carousel">
@@ -29,7 +34,7 @@ $fields[ 'testimonials' ] = $element->get_repeater_field( $fields[ 'testimonials
                             </div>
                         </div>
                     </div>
-            <?php
+                <?php
 	            }
             }
             ?>
